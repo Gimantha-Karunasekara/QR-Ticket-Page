@@ -1,0 +1,297 @@
+:root{
+  --primary-color: #ffc008;
+  --font-color: #fff;
+  --font-color-second: #d0d0d0;
+}
+
+body{
+  background: #000;
+  color: var(--font-color);
+  font-family: 'Poppins', sans-serif;
+  background-image: url(./assets/BG.jpg);
+  background-size: cover;
+}
+
+.nav{
+  width: 100%;
+  height: 120px;  
+  display: flex;
+}
+
+.nav-logo{
+  max-height: 120px;
+}
+
+.ticket-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    margin: 0;
+    text-align: center;
+}
+
+.ticket {
+    position: relative;
+    width: 380px;
+    height: 600px;
+    margin-top: 2rem;
+  }
+  .ticket-contents {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, .5);
+    border: .2px solid var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .3);
+    transition: .5s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .ticket-food{
+    position: absolute;
+    background: var(--primary-color);
+    color: black;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-bottom-left-radius: 50%;
+    top: 0;
+    right: 0;
+  }
+
+  .ticket-header{
+    flex-grow: 1;
+  }
+
+  .ticket-subtitle{
+    font-weight: 200;
+    color: var(--font-color-second);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ticket-title{
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  } 
+
+  .ticket-details{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+  }
+
+  .ticket-qr{
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .ticket-name{
+    font-size: 1.2rem;
+    max-width: 100%;
+    padding: 0 1rem;
+    text-wrap: wrap;
+  }
+
+  .ticket-footer{
+    background-color: var(--primary-color);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 1rem;
+    color: var(--font-color);
+    position: relative;
+  }
+
+  .ticket-footer-text{
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .ticket-banner{
+    max-height: 80px;
+    position: absolute;
+    top: 0;
+    opacity: 50%;
+    max-width: 380px;
+  }
+
+  @keyframes panning1 {
+    0% {
+      transform: translate(-10%, -100%);
+    }
+    100% {
+      transform: translate(90%, -100%);
+    }
+  }
+  @keyframes panning2 {
+    0% {
+      transform: translate(-110%, -100%);
+    }
+    100% {
+      transform: translate(-10%, -100%);
+    }
+  }
+
+  .ticket-banner-1{
+    transform: translate(-10%, -100%);
+    animation: panning1 20s linear infinite;
+  }
+
+  .ticket-banner-2{
+    transform: translate(-110%, -100%);
+    animation: panning2 20s linear infinite;
+  }
+
+  .ticket-banner-img{
+    object-fit: cover;
+    max-height: 80px;
+    max-width: 380px;
+  }
+
+
+  /* for mobile  */
+
+  @media only screen and (max-width: 600px) {
+    .nav{
+      align-items: center;
+      justify-content: center;
+    }
+    .ticket-container{
+      min-height: 80vh;
+    }
+    .ticket {
+      width: 300px;
+      height: 500px;
+    }
+    .ticket-contents {
+      border-radius: 10px;
+    }
+    .ticket-footer {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .ticket-banner {
+      max-height: 60px;
+    }
+    .ticket-banner-img {
+      max-height: 60px;
+    }
+    .ticket-footer-text {
+      padding: 0.5rem;
+      font-size: .8rem;
+    }
+    .ticket-qr {
+      max-width: 150px;
+      max-height: 150px;
+    }
+    .ticket-name {
+      font-size: 1rem;
+    }
+    .ticket-subtitle {
+      font-size: 0.8rem;
+    }
+    .ticket-title {
+      font-size: 1rem;
+    }
+  }
+
+
+
+  .hover-point {
+    position: absolute;
+    z-index: 2;
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+  }
+  .hover-point:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  .hover-point:nth-child(2) {
+    top: 0;
+    left: calc(100% / 3);
+  }
+  .hover-point:nth-child(3) {
+    top: 0;
+    right: 0;
+  }
+  .hover-point:nth-child(4) {
+    top: calc(100% / 3);
+    left: 0;
+  }
+  .hover-point:nth-child(5) {
+    top: calc(100% / 3);
+    right: 0;
+  }
+  .hover-point:nth-child(6) {
+    bottom: 0;
+    left: 0;
+  }
+  .hover-point:nth-child(7) {
+    bottom: 0;
+    left: calc(100% / 3);
+  }
+  .hover-point:nth-child(8) {
+    bottom: 0;
+    right: 0;
+  }
+  .hover-point:nth-child(1):hover ~ .ticket-contents {
+    box-shadow: 15px 15px 50px rgba(0, 0, 0, .3);
+    transform-origin: right top;
+    transform: perspective(2000px) rotateX(10deg) rotateY(-10deg) rotateZ(1deg);
+  }
+  .hover-point:nth-child(2):hover ~ .ticket-contents {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .3);
+    transform-origin: center top;
+    transform: perspective(2000px) rotateX(10deg);
+  }
+  .hover-point:nth-child(3):hover ~ .ticket-contents {
+    box-shadow: -15px 15px 50px rgba(0, 0, 0, .3);
+    transform-origin: left top;
+    transform: perspective(2000px) rotateX(10deg) rotateY(10deg) rotateZ(-2deg);
+  }
+  .hover-point:nth-child(4):hover ~ .ticket-contents {
+    box-shadow: 15px 5px 50px rgba(0, 0, 0, .3);
+    transform-origin: left center;
+    transform: perspective(2000px) rotateY(-10deg);
+  }
+  .hover-point:nth-child(5):hover ~ .ticket-contents {
+    box-shadow: -15px 5px 50px rgba(0, 0, 0, .3);
+    transform-origin: right center;
+    transform: perspective(2000px) rotateY(10deg);
+  }
+  .hover-point:nth-child(6):hover ~ .ticket-contents {
+    box-shadow: 15px -15px 50px rgba(0, 0, 0, .3);
+    transform-origin: right bottom;
+    transform: perspective(2000px) rotateX(-10deg) rotateY(-10deg) rotateZ(-2deg);
+  }
+  .hover-point:nth-child(7):hover ~ .ticket-contents {
+    box-shadow: 0 -15px 50px rgba(0, 0, 0, .3);
+    transform-origin: center bottom;
+    transform: perspective(2000px) rotateX(-10deg);
+  }
+  .hover-point:nth-child(8):hover ~ .ticket-contents {
+    box-shadow: -15px -15px 50px rgba(0, 0, 0, .3);
+    transform-origin: left bottom;
+    transform: perspective(2000px) rotateX(-10deg) rotateY(10deg) rotateZ(2deg);
+  }
+  
+  
+  
